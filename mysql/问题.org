@@ -1,0 +1,8 @@
+- [] MySQL自增ID用完了如何处理?
+
+*** InnoDB系统自增row_id
+*** Xid 
+*** Redis自增主键
+*** Snoyflake 
+
+- [] 
