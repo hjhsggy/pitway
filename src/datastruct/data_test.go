@@ -11,6 +11,8 @@ func TestBTree(t *testing.T) {
 	root.Root = &TreeNode{Value: 1}
 	root.Root.Left = &TreeNode{Value: 2}
 	root.Root.Right = &TreeNode{Value: 3}
+	root.Root.Right.Left = &TreeNode{Value: 4}
+	root.Root.Right.Right = &TreeNode{Value: 5}
 
 	t.Log("PreOrderTraversal\n")
 	root.Root.PreOrderTraversal()
@@ -18,6 +20,10 @@ func TestBTree(t *testing.T) {
 	root.Root.MidOrderTraverse()
 	t.Log("BackOrderTraverse\n")
 	root.Root.BackOrderTraverse()
+	t.Log("LevelTraverse1\n")
+	root.Root.LevelTraverse()
+	t.Log("LevelTraverse2\n")
+	root.Root.LevelTraverse2()
 
 }
 

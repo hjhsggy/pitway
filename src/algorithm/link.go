@@ -122,6 +122,7 @@ func ListReverse(head *LinkNode) *LinkNode {
 
 	for cur != nil {
 
+		// next 指向下一个节点
 		next = cur.Next
 		// 节点交换, 前一个节点和当前节点交换
 		cur.Next = pre

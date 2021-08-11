@@ -80,3 +80,67 @@ func (root *TreeNode) BackOrderTraverse() {
 		root.Left.BackOrderTraverse()
 	}
 }
+
+func (root *TreeNode) LevelTraverse() {
+
+	if root == nil {
+		return
+	}
+
+	nodeArr := []*TreeNode{root}
+	for len(nodeArr) > 0 {
+
+		node := nodeArr[0]
+		fmt.Printf("value: %v ", node.Value)
+		if node.Left != nil {
+			nodeArr = append(nodeArr, node.Left)
+		}
+		if node.Right != nil {
+			nodeArr = append(nodeArr, node.Right)
+		}
+		nodeArr = nodeArr[1:]
+
+	}
+
+}
+
+func (root *TreeNode) LevelTraverse2() {
+
+	if root == nil {
+		return
+	}
+
+	valArr := [][]int{}
+	nodeArr := []*TreeNode{root}
+	for len(nodeArr) > 0 {
+
+		tmpValArr := []int{}
+		tmpNodeArr := []*TreeNode{}
+		for _, val := range nodeArr {
+			tmpValArr = append(tmpValArr, val.Value)
+			if val.Left != nil {
+				tmpNodeArr = append(tmpNodeArr, val.Left)
+			}
+			if val.Right != nil {
+				tmpNodeArr = append(tmpNodeArr, val.Right)
+			}
+		}
+		nodeArr = tmpNodeArr
+		valArr = append(valArr, tmpValArr)
+	}
+
+	for index, val := range valArr {
+		fmt.Println("level", index+1, "val", val)
+	}
+
+}
+
+func (root *TreeNode) minDepth() int {
+
+	if root == nil {
+		return 0
+	}
+
+	return 0
+
+}

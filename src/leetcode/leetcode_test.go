@@ -161,3 +161,19 @@ func Test215KLargest(t *testing.T) {
 	t.Log(findKthLargest(arr, k))
 
 }
+
+func TestMinDistance(t *testing.T) {
+
+	// array := [][]int{
+	// 	{1, 3, 1},
+	// 	{1, 5, 1},
+	// 	{4, 2, 1},
+	// }
+
+	array := [][]int{
+		{6, 1, 1, 7, 9, 2, 7, 2, 4, 5},
+	}
+
+	t.Log(MinDistance(array))
+
+}

@@ -17,17 +17,21 @@ func TestBinarySearch(t *testing.T) {
 
 func TestSort(t *testing.T) {
 
-	array := []int{1, 5, 3, 7, 4, 8, 2}
+	array := []int{5, 1, 3, 7, 4, 8, 2}
 
 	// //test1 := array
 	// test2 := array
 	// //BubbleSort1(test1)
 	// InsertSort(test2)
 
-	t.Log(QuickSort(array))
+	// t.Log(QuickSort(array))
 
 	//t.Log("bubble", test1, "\n")
 	//t.Log("bubble", test2, "\n")
+
+	QuickSort2(array)
+
+	t.Log(array)
 
 }
 
