@@ -87,3 +87,50 @@ func QuickSort2(values []int) {
 	QuickSort2(values[head+1:])
 
 }
+
+//堆排序
+//s[0]不用，实际元素从角标1开始
+//父节点元素大于子节点元素
+//左子节点角标为2*k
+//右子节点角标为2*k+1
+//父节点角标为k/2
+func HeapSort(s []int) {
+
+	// 构造大根堆
+	for i := len(s)/2 - 1; i >= 0; i-- {
+		sink(s, i, len(s))
+	}
+
+	//调整堆顶与堆底元素, 构造大根堆
+	for j := len(s) - 1; j >= 0; j-- {
+		// 交换对顶与堆底元素
+		swap(s, 0, j)
+		// 继续让结构满足大根堆
+		sink(s, 0, j)
+	}
+
+}
+
+//下沉（由上至下的堆有序化）
+func sink(s []int, i, N int) {
+
+	tmp := s[i]
+
+	for k := i*2 + 1; k < N; k = 2*k + 1 {
+		if k+1 < N && s[k] < s[k+1] {
+			k++
+		}
+
+		if s[k] > tmp {
+			s[i] = s[k]
+			i = k
+		} else {
+			break
+		}
+	}
+	s[i] = tmp
+}
+
+func swap(s []int, i int, j int) {
+	s[i], s[j] = s[j], s[i]
+}

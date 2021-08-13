@@ -29,7 +29,8 @@ func TestSort(t *testing.T) {
 	//t.Log("bubble", test1, "\n")
 	//t.Log("bubble", test2, "\n")
 
-	QuickSort2(array)
+	//QuickSort2(array)
+	HeapSort(array)
 
 	t.Log(array)
 

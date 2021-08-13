@@ -5,4 +5,5 @@
 *** Redis自增主键
 *** Snoyflake 
 
-- [] 
+- [] 事务如何做到ACID?
+
