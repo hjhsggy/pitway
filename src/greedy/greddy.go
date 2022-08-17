@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func ChargeConin(m []int, target int) []int {
+func ChargeCoin(m []int, target int) []int {
 
 	result := make([]int, 0, len(m))
 
@@ -44,4 +44,21 @@ func Unmarshal() {
 
 	fmt.Println(reply)
 
+}
+
+func moveZeroes(nums []int) {
+
+	var slow, fast int = 0, 0
+	for fast < len(nums) {
+		if nums[fast] != 0 {
+			nums[slow] = nums[fast]
+			slow++
+		}
+		fast++
+	}
+
+	for slow < len(nums) {
+		nums[slow] = 0
+		slow++
+	}
 }

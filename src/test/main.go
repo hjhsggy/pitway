@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type LinkList struct {
 	Val  int
@@ -88,8 +91,35 @@ func LinkPrint(head *LinkList) {
 
 func main() {
 
-	headInsertData()
+	// headInsertData()
 
-	tailInsertData()
+	// tailInsertData()
+
+	TestMarshal()
+
+}
+
+func TestMarshal() {
+
+	msg := "{\"topic\":\"hello\",\"tag\":\"ceshi\",\"body\":\"{\\\"first\\\":22,\\\"last\\\":33}\"}"
+
+	var body map[string]interface{}
+	err := json.Unmarshal([]byte(msg), &body)
+	if err != nil {
+		return
+	}
+
+	type Data struct {
+		First int64 `json:"first"`
+		Last  int64 `json:"last"`
+	}
+
+	var data Data
+	err = json.Unmarshal([]byte(body["body"].(string)), &data)
+	if err != nil {
+		return
+	}
+
+	fmt.Println(data)
 
 }

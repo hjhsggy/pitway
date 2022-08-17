@@ -130,7 +130,7 @@ func findAnagram(s string, p string) []int {
 	}
 	left, right := 0, 0
 	valid := 0
-	indexs := []int{}
+	index := []int{}
 	for right < len(s) {
 		c := s[right]
 		right++
@@ -142,7 +142,7 @@ func findAnagram(s string, p string) []int {
 		}
 		for right-left >= len(p) {
 			if valid == len(need) {
-				indexs = append(indexs, left)
+				index = append(index, left)
 			}
 			d := s[left]
 			left++
@@ -154,6 +154,6 @@ func findAnagram(s string, p string) []int {
 			}
 		}
 	}
-	return indexs
+	return index
 
 }
